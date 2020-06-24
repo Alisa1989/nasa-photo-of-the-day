@@ -9,7 +9,7 @@ const [photoOfDay, setPhotoOfDay] = useState([]);
 
 useEffect(() => {
   axios
-    .get(`https://ghibliapi.herokuapp.com/films/`)
+    .get(`https://api.nasa.gov/planetary/apod?api_key=SWuGozl5VDxtcdwQ2xIOHOE67eO39PiXOxqErmsV`)
     .then(response => {
       console.log("Res from useEffect of NASA", response);
       setPhotoOfDay(response.data);
@@ -26,13 +26,12 @@ useEffect(() => {
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p>
      
-      {photoOfDay.map(object => {
+      {/* {photoOfDay.map(object => { */}
       <PostPage 
-         image = {object.url}
-         altImage = {object.explanation}
+         image = {photoOfDay.url}
+         title = {photoOfDay.title}
+         text = {photoOfDay.explanation}
         />
-      }
-        )};
     </div>
   );
 
