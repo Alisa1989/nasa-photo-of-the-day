@@ -1,12 +1,14 @@
 import React from "react";
 
+import Post from "./Post"
+
 const PostPage = ({ image, title, text}) => {
-    console.log({image});
     return(
         <div className = "post-page">
             <img src= {image}/>
             <h1>{title}</h1>
             <p>{text}</p>
+            {/* <Post title = {title} text = {text}/> */}
         </div>
     )
 }
