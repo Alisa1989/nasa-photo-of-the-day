@@ -2,7 +2,18 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 import axios from "axios";
 
+import { Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import styled, {css} from "styled-components";
+
 import PostPage from "./Components/PostComponents/PostPage";
+
+ export const Container = styled.div`
+   margin: 30em;`
+
+
+
 
 export default function App() {
 const [photoOfDay, setPhotoOfDay] = useState([]);
@@ -20,7 +31,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="App">
+    <Container>
       {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
@@ -32,7 +43,8 @@ useEffect(() => {
          title = {photoOfDay.title}
          text = {photoOfDay.explanation}
         />
-    </div>
+      <Button color="primary" size= "lg" block href= "http://www.nasa.gov">TO NASA'S WEBSITE</Button>
+    </Container>
   );
 
   }
